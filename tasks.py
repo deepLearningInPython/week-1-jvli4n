@@ -13,7 +13,11 @@ import numpy
 # Your code here:
 # -----------------------------------------------
 
-def step
+def step(num):
+    if num > 0:
+        return 1
+    else:
+        return -1
 
 
 # -----------------------------------------------
@@ -28,8 +32,9 @@ def step
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
-
+def ReLu(arr, cutoff=0):
+    arr[arr < cutoff] = cutoff
+    return arr
 
 # -----------------------------------------------
 
@@ -44,7 +49,8 @@ def ReLu
 # Your code here:
 # -----------------------------------------------
 
-def neural_net_layer
-
+def neural_net_layer(two_d_arr, arr):
+    mat_prod = numpy.dot(two_d_arr, arr)
+    return ReLu(mat_prod)
 
 # ------------------------------------------
